@@ -40,7 +40,7 @@ class StringCalculatorTest {
     }
 
     @Test
-    @DisplayName("문자열 나눠주기")
+    @DisplayName("문자열 나누는 테스트")
     void splitStringTest(){
         String str = "1+2";
         String[] result = {"1", "+", "2"};

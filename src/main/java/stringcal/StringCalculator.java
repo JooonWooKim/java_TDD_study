@@ -35,4 +35,9 @@ public class StringCalculator {
     public String[] splitString(String str){
         return str.split("");
     }
+
+    //문자열을 숫자로 변경하는 메서드
+    public int changeNum(String str){
+         return Integer.parseInt(str);
+    }
 }
