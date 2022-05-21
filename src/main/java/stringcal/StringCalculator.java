@@ -5,7 +5,8 @@ import java.util.Scanner;
 
 public class StringCalculator {
 
-    StringCalculator stringCalculator;
+     StringCalculator stringCalculator;
+
     //더하기
     public int add(int i, int j){
         return i+j;
@@ -37,7 +38,31 @@ public class StringCalculator {
     }
 
     //문자열을 숫자로 변경하는 메서드
-    public int changeNum(String str){
+    public int changeString(String str){
          return Integer.parseInt(str);
     }
+
+    //문자열을 계산하는 메서드
+    public int calculateString(String[] str){
+        int result = changeString(str[0]);
+        for(int i = 0; i < str.length - 2; i += 2){
+            result = stringCalculator(result, str[i + 1].charAt(0), changeString(str[i + 2]));
+        }
+        return result;
+    }
+
+    private int stringCalculator(int firstValue, char operetor, int secondValue) {
+        if(operetor == '+')
+            return add(firstValue, secondValue);
+        if(operetor == '-')
+            return subtract(firstValue, secondValue);
+        if(operetor == '*')
+            return multiply(firstValue, secondValue);
+        if(operetor == '/')
+            return divide(firstValue, secondValue);
+        else System.out.println("잘못된 값 입력");
+            throw new RuntimeException();
+    }
+
+
 }
