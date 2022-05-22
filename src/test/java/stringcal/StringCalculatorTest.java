@@ -52,6 +52,9 @@ class StringCalculatorTest {
     void StringTest(){
         String str = "1+3+5+7+9";
         String[] result = stringCalculator.splitString(str);
+        if(str == null || str == ""){
+            stringCalculator.notNull(str);
+        }
         int num = 25;
         assertEquals(num, stringCalculator.calculateString(result));
     }

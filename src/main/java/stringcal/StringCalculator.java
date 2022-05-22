@@ -32,6 +32,12 @@ public class StringCalculator {
         return 0;
     }
 
+    //입력 값이 null이거나 빈 공백 문자일 경우 IllegalArgumentException throw
+    public void notNull(String str){
+        if(str == null || str == "")
+            throw new IllegalStateException("입력값을 확인해주세요.");
+    }
+
     //문자열 자르는 메서드
     public String[] splitString(String str){
         return str.split("");
