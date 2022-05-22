@@ -35,7 +35,7 @@ public class StringCalculator {
     //입력 값이 null이거나 빈 공백 문자일 경우 IllegalArgumentException throw
     public void notNull(String str){
         if(str == null || str == "")
-            throw new IllegalStateException("입력값을 확인해주세요.");
+            throw new IllegalArgumentException("입력값을 확인해주세요.");
     }
 
     //문자열 자르는 메서드
@@ -57,14 +57,14 @@ public class StringCalculator {
         return result;
     }
 
-    private int stringCalculator(int firstValue, char operetor, int secondValue) {
-        if(operetor == '+')
+    private int stringCalculator(int firstValue, char operator, int secondValue) {
+        if(operator == '+')
             return add(firstValue, secondValue);
-        if(operetor == '-')
+        if(operator == '-')
             return subtract(firstValue, secondValue);
-        if(operetor == '*')
+        if(operator == '*')
             return multiply(firstValue, secondValue);
-        if(operetor == '/')
+        if(operator == '/')
             return divide(firstValue, secondValue);
         else System.out.println("잘못된 값 입력");
             throw new RuntimeException();
