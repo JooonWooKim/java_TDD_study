@@ -14,4 +14,15 @@ public class CompareNumber {
         }
         return strike;
     }
+
+    //result 값은 스트라이크와 볼의 합
+    public int equalsMany(List<Integer>computer, List<Integer>user){
+        int result = 0;
+        for (int i = 0; i < user.size(); i++) {
+            if(computer.contains(user.get(i))){
+                result += 1;
+            }
+        }
+        return result;
+    }
 }
